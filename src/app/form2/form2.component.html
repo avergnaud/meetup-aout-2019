@@ -1,0 +1,22 @@
+<form>
+    <div class="form-group">
+        <label for="email-id">Email</label>
+        <input
+            id="email-id"
+            class="form-control"
+            type="text"
+            size="50"
+            #emailInput
+        >
+    </div>
+    <div class="form-group">
+        <label for="amount-id">Amount</label>
+        <input
+            id="amount-id"
+            class="form-control"
+            type="number"
+            #amountInput
+        >
+    </div>
+    <button class="btn btn-success" (click)="onAdd(emailInput, amountInput)">Add</button>
+</form>

@@ -1,0 +1,41 @@
+<!--
+    reactive form
+-->
+<form [formGroup]="myForm" (ngSubmit)="onAdd()">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input
+                id="email"
+                class="form-control"
+                type="text"
+                size="30"
+                formControlName="email"
+            >
+            <span
+                *ngIf="myForm.get('email').errors && myForm.get('email').errors['email']"
+            >
+                Please enter a valid email address
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="amount-id">Amount</label>
+            <input
+                id="amount-id"
+                class="form-control"
+                type="number"
+                formControlName="amount"
+            >
+            <span
+                *ngIf="myForm.get('amount').errors && myForm.get('amount').errors['amountIsNegative']"
+            >
+                Negative amounts are not allowed
+            </span>
+        </div>
+        <button 
+            class="btn btn-success"
+            type="submit"
+            [disabled]="!myForm.valid"
+        >
+            Add
+        </button>
+    </form>

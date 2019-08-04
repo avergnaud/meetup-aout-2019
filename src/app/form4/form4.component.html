@@ -1,0 +1,49 @@
+
+<!--
+You access its properties by exporting it into a local template variable using ngForm 
+such as (#f="ngForm"). Use the variable where needed on form submission.
+-->
+<form #myForm="ngForm" (ngSubmit)="onAdd()">
+  <div class="form-group">
+    <label for="email-id">Email</label>
+    <input
+      id="email-id"
+      class="form-control"
+      type="text"
+      size="50"
+      name="email"
+      ngModel
+    />
+  </div>
+  <div class="form-group">
+    <label for="amount-id">Amount</label>
+    <input
+      id="amount-id"
+      class="form-control"
+      type="number"
+      name="amount"
+      ngModel
+    />
+    <!-- [ngModel]="defaultAmount" -->
+  </div>
+  <button class="btn btn-sucess">Add</button>
+</form>
+
+<!--
+ "
+ app.module.ts : imports: [FormsModule]
+ > angular will automatically create a javascript representation of the form when it detects a <form>> element
+ 
+ angular will not automatically detect your inputs in this form
+   because it might not be the desired behavior
+   some inputs might not be part of what is actually submitted
+   
+ ngModel declares the input as a control in the javascript representation of the form
+ ngModel registers controls manually
+ add a Angular NgModel directive associated with this control
+ 
+ https://angular.io/api/forms/NgModel#description
+ Creates a FormControl instance from a domain model and binds it to a form control element.
+ If used within a parent form, the directive also registers itself with the form as a child control
+ "
+ -->

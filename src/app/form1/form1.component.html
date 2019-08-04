@@ -1,0 +1,25 @@
+<h3>Form 1</h3>
+<form>
+  <div class="form-group">
+    <label for="mail-id">Mail</label>
+    <input
+      id="mail-id"
+      class="form-control"
+      type="text"
+      size="50"
+      name="email"
+      [(ngModel)]="email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="amount-id">Amount</label>
+    <input
+      id="amount-id"
+      class="form-control"
+      type="number"
+      name="amount"
+      [(ngModel)]="amount"
+    />
+  </div>
+  <button class="btn btn-success" (click)="onAdd()">Add</button>
+</form>

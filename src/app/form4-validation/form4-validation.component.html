@@ -1,0 +1,47 @@
+<form #myForm="ngForm" (ngSubmit)="onAdd()">
+    <div class="form-group">
+        <label for="email-id">Email</label>
+        <input
+            id="email-id"
+            class="form-control"
+            type="text"
+            size="50"
+            name="email"
+            ngModel
+            required
+            email
+            #emailInput="ngModel"
+        >
+        <p 
+            class="help-block"
+            *ngIf="emailInput.touched && !emailInput.valid"
+        >
+            please enter a valid email address
+        </p>
+    </div>
+    <div class="form-group">
+        <label for="amount-id">Amount</label>
+        <input
+            id="amount-id"
+            class="form-control"
+            type="number"
+            name="amount"
+            ngModel
+        >
+    </div>
+    <button 
+        class="btn btn-success"
+        [disabled]="!myForm.valid"
+    >
+        Add
+    </button>
+</form>
+
+<!--
+To inspect the properties of the associated FormControl (like validity state), 
+export the directive into a local template variable using ngModel as the key (ex: #myVar="ngModel")
+
+The template variable (#emailInput) has the value "ngModel" (always ngModel). 
+This gives you a reference to the Angular NgModel directive associated with 
+this control that you can use in the template to check for control states such as valid and dirty.
+-->

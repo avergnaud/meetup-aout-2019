@@ -1,0 +1,42 @@
+<h3>intro</h3>
+<!--
+equivalent of
+document.getElementById("my-input").addEventListener("input",function(event){console.log(event.target.value)});
+-->
+<p>(input)="getTheInput($event)"</p>
+<input
+  id="my-input"
+  type="text"
+  size="50"
+  value="initial value from the markup"
+  (input)="getTheInput($event)"
+/>
+
+<p class="top-1">
+  [value]="theValue" (input)="getTheInput($event)"
+</p>
+<input
+  type="text"
+  size="50"
+  [value]="theValue"
+  (input)="getTheInput($event)"
+/>
+
+<p class="top-1">ngModel [ngModel]="theValue" (ngModelChange)="theValue = $event"</p>
+<p>cf <a href="https://angular.io/api/forms/NgModel#properties" target="_blank">https://angular.io/api/forms/NgModel#properties</a></p>
+<p>@Input('ngModel')</p>
+<p>@Output('ngModelChange')</p>
+<input
+  type="text"
+  size="50"
+  ngModel [ngModel]="theValue" (ngModelChange)="theValue = $event"
+/>
+
+<p class="top-1">
+  [(ngModel)]="theValue"
+</p>
+<input
+  type="text"
+  size="50"
+  [(ngModel)]="theValue"
+/>

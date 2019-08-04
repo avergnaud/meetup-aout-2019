@@ -1,0 +1,30 @@
+<!--
+    reactive form
+-->
+<form [formGroup]="myForm" (ngSubmit)="onAdd()">
+    <div class="form-group">
+        <label for="email-id">Email</label>
+        <input
+            id="email-id"
+            class="form-control"
+            type="text"
+            size="30"
+            formControlName="email"
+        >
+    </div>
+    <div class="form-group">
+        <label for="amount-id">Amount</label>
+        <input
+            id="amount-id"
+            class="form-control"
+            type="number"
+            formControlName="amount"
+        >
+    </div>
+    <button 
+        class="btn btn-success"
+        type="submit"
+    >
+        Add
+    </button>
+</form>

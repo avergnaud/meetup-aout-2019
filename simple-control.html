@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>simple control</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Simple control</h1>
+          <input id="simple-control" type="text" size="50" />
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("simple-control")
+        .addEventListener("input", function(event) {
+          console.log(event.target.value);
+        });
+    </script>
+  </body>
+</html>

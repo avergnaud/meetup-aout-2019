@@ -1,0 +1,24 @@
+<form #myForm="ngForm" (ngSubmit)="onAdd(myForm)">
+    <div class="form-group">
+        <label for="email-id">Email</label>
+        <input
+            id="email-id"
+            class="form-control"
+            type="text"
+            size="50"
+            name="email"
+            ngModel
+        >
+    </div>
+    <div class="form-group">
+        <label for="amount-id">Amount</label>
+        <input
+            id="amount-id"
+            class="form-control"
+            type="number"
+            name="amount"
+            ngModel
+        >
+    </div>
+    <button class="btn btn-success">Add</button>
+</form>

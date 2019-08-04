@@ -1,27 +1,63 @@
-# Meetup
+# Meetup août 2019
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
 
-## Development server
+## avec ngModel
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### binding propriété par propriété
 
-## Code scaffolding
+form1.component
+```
+[(ngModel)]="email"
+[(ngModel)]="amount"
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### template variable, ngModel, ViewChild
 
-## Build
+form4.component, form4-validation.component
+```
+<form #myForm="ngForm" (ngSubmit)="onAdd()">
+name="email"
+ngModel
+@ViewChild('myForm', { static: false}) myForm: NgForm;
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### template variable, ngModel
 
-## Running unit tests
+form5.component
+```
+<form #myForm="ngForm" (ngSubmit)="onAdd(myForm)">
+name="email"
+ngModel
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## sans ngModel
 
-## Running end-to-end tests
+### template variables
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+form2.component
+```
+#emailInput
+<button class="btn btn-success" (click)="onAdd(emailInput, amountInput)">
+```
 
-## Further help
+### template variables, ViewChild
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+form3.component
+```
+#emailInput
+<button class="btn btn-success" (click)="onAdd()">
+@ViewChild('emailInput', { static: false }) emailInput: ElementRef;
+```
+
+### reactive forms
+
+reactive-form1.component, reactive-form2.component
+```
+<form [formGroup]="myForm" (ngSubmit)="onAdd()">
+formControlName="email"
+this.myForm = new FormGroup({
+  'email': new FormControl(null, [Validators.required, Validators.email]),
+  'amount': new FormControl(null)
+});
+```
