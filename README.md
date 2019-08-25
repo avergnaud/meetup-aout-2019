@@ -1,5 +1,9 @@
 # Meetup août 2019
 
+## introduction au binding
+
+https://github.com/avergnaud/knockoutjs-like-binding
+
 ## introduction à [(ngModel)]
 
 https://github.com/avergnaud/appModel
