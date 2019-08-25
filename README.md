@@ -1,6 +1,8 @@
 # Meetup août 2019
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
+## introduction à [(ngModel)]
+
+https://github.com/avergnaud/appModel
 
 ## avec ngModel
 
